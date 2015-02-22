@@ -12,8 +12,6 @@ flashcardControllers.controller('FlashcardCtrl', ['$scope', '$http',
         $scope.current_index = - 1
         $scope.feedback_message = "";
         $scope.updateStudents();
-        $scope.textbox_focus = true
-        $scope.next_button_focus = false
         $scope.next()
       });
 
@@ -22,6 +20,8 @@ flashcardControllers.controller('FlashcardCtrl', ['$scope', '$http',
     $scope.giveUp = function() {
       $scope.result_hidden = false;
       $scope.feedback_message = "Say hello to " + fullName($scope.current_student) + "!"
+      $scope.next_button_focus = true;
+      $scope.textbox_focus = false
     }
 
     $scope.updateStudents = function () {
@@ -43,7 +43,9 @@ flashcardControllers.controller('FlashcardCtrl', ['$scope', '$http',
     }
 
     $scope.submit = function() {
-      // TODO dont let me get infinite score
+      if ($scope.result_hidden == false) {
+        return
+      }
       var poss_names = validNames($scope.current_student)
       var guess = $scope.guess.toLowerCase()
       if(guess == '') {

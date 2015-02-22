@@ -9,14 +9,14 @@
   <div class="pull-left">
     <img ng-src="{{student_image_path}}" class="student"/>
   </div>
-  <input type="text" ng-model="guess" ng-enter="submit()"
-    autofocus="{{textbox_focus}}" />
+  <input type="text" class="guess" ng-model="guess" ng-enter="submit()"
+    ng-focus="{{textbox_focus}}" />
   <button class="btn btn-primary" ng-click="submit()" />GOT IT!</button>
   <button class="btn btn-primary" ng-click="giveUp()" />uh...fuck</button>
   <div ng-if="!result_hidden" class="jumbotron response" >
     <label class="thin-label" >{{feedback_message}}</label>
-    <button class="btn btn-primary" ng-click="next()"
-    autofocus="{{next_button_focus}}">Next</button>
+    <button class="btn btn-primary next" ng-click="next()"
+    ng-focus="{{next_button_focus}}">Next</button>
   </div>
   <p ng-model="students[current_student]" class="student">
 

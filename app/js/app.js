@@ -3,8 +3,7 @@
 // Declare app level module which depends on views, and components
 var flashcardApp = angular.module('flashcardApp', [
   'ngRoute',
-  'flashcardControllers',
-  'utils.autofocus'
+  'flashcardControllers'
 ])
 flashcardApp.config(['$routeProvider', function($routeProvider) {
   $routeProvider.when('/', {
@@ -27,15 +26,15 @@ flashcardApp.directive('ngEnter', function () {
     };
 });
 
-angular.module('utils.autofocus', [])
+flashcardApp.directive('ngFocus', function() {
 
-.directive('autofocus', ['$timeout', function($timeout) {
-  return {
-    restrict: 'A',
-    link : function($scope, $element) {
-      $timeout(function() {
-        $element[0].focus();
-      });
-    }
+  return function(scope, element, attrs) {
+    attrs.$observe('ngFocus', function(value) {
+      if (value === 'true') {
+        element[0].focus()
+        element[0].select()
+      }
+    })
   }
-}]);
+
+})
