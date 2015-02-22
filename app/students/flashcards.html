@@ -1,0 +1,21 @@
+<div class='container-fluid flashcards' ng-init="init()">
+  <div class="pull-right" ng-repeat="(cohort_name, cohort_students) in cohorts">
+    <input type="checkbox" ng-model="cohort_students.selected" ng-change="updateStudents()"/>{{cohort_name}}
+  </div><br>
+  <div class="pull-right">
+    <label class="score">Your Score: {{score}} </label>
+  </div>
+
+  <div class="pull-left">
+    <img ng-src="{{student_image_path}}" class="student"/>
+  </div>
+  <input type="text" ng-model="guess" />
+  <button class="btn btn-primary" ng-click="submit()" />GOT IT!</button>
+  <button class="btn btn-primary" ng-click="giveUp()" />uh...fuck</button>
+  <div ng-if="!result_hidden" class="jumbotron response" >
+    <label class="thin-label" >{{feedback_message}}</label>
+    <button class="btn btn-primary" ng-click="next()">Next</button>
+  </div>
+  <p ng-model="students[current_student]" class="student">
+
+</div>

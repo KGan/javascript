@@ -1,12 +1,13 @@
 'use strict';
 
 // Declare app level module which depends on views, and components
-angular.module('myApp', [
+var flashcardApp = angular.module('flashcardApp', [
   'ngRoute',
-  'myApp.view1',
-  'myApp.view2',
-  'myApp.version'
-]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.otherwise({redirectTo: '/view1'});
+  'flashcardControllers'
+])
+flashcardApp.config(['$routeProvider', function($routeProvider) {
+  $routeProvider.when('/', {
+    templateUrl: 'students/flashcards.html',
+    controller: 'FlashcardCtrl'
+  }).otherwise({redirectTo: '/'});
 }]);
