@@ -1,23 +1,31 @@
-<div class='container-fluid flashcards' ng-init="init()" >
-  <div class="pull-right" ng-repeat="(cohort_name, cohort_students) in cohorts">
-    <input type="checkbox" ng-model="cohort_students.selected" ng-change="updateStudents()"/>{{cohort_name}}
-  </div><br>
-  <div class="pull-right">
-    <label class="score">Your Score: {{score}} </label>
+<div class='page container-fluid'>
+  <div class='header'>
+    <div class='header_text row'>
+      <h1 class='text-center'> App Academy Cohort Flashcards </h1>
+    </div>
   </div>
 
-  <div class="pull-left">
-    <img ng-src="{{student_image_path}}" class="student"/>
-  </div>
-  <input type="text" class="guess" ng-model="guess" ng-enter="submit()"
-    ng-focus="{{textbox_focus}}" />
-  <button class="btn btn-primary" ng-click="submit()" />GOT IT!</button>
-  <button class="btn btn-primary" ng-click="giveUp()" />uh...fuck</button>
-  <div ng-if="!result_hidden" class="jumbotron response" >
-    <label class="thin-label" >{{feedback_message}}</label>
-    <button class="btn btn-primary next" ng-click="next()"
-    ng-focus="{{next_button_focus}}">Next</button>
-  </div>
-  <p ng-model="students[current_student]" class="student">
+  <div class='container col-md-6 col-md-offset-3 flashcards' ng-init="init()" >
 
+    <div class="row">
+      <label class="score col-md-offset-8"><h3> Your Score: {{score}} </h3> </label>
+    </div>
+
+
+    <img ng-src="{{student_image_path}}" class="student col-md-offset-4"/>
+    <input type="text" class="guess" ng-model="guess" ng-enter="submit()"
+      ng-focus="{{textbox_focus}}" />
+    <button class="btn btn-primary" ng-click="submit()" />GOT IT!</button>
+    <button class="btn btn-primary" ng-click="giveUp()" />uh...fuck</button>
+    <div ng-if="!result_hidden" class="jumbotron response" >
+      <label class="thin-label" >{{feedback_message}}</label>
+      <button class="btn btn-primary next" ng-click="next()"
+      ng-focus="{{next_button_focus}}">Next</button>
+    </div>
+    <p ng-model="students[current_student]" class="cohorts">
+      <div class="row" ng-repeat="(cohort_name, cohort_students) in cohorts">
+        <input type="checkbox" ng-model="cohort_students.selected" ng-change="updateStudents()"/>{{cohort_name}}
+      </div><br>
+    </p>
+  </div>
 </div>

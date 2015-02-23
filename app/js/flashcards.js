@@ -54,7 +54,7 @@ flashcardControllers.controller('FlashcardCtrl', ['$scope', '$http',
       } else if (poss_names.indexOf(guess) > - 1) {
         $scope.score++;
         $scope.feedback_message = "Yep, you're right, this is " + fullName($scope.current_student)
-      } else if (edDist(guess, poss_names[0]) < 4 || (poss_names[1] && edDist(guess, poss_names[1])) ) {
+      } else if (goodGuess(guess, poss_names[0]) || (poss_names[1] && goodGuess(guess, poss_names[1])) ) {
         $scope.score += 0.5
         $scope.feedback_message = "Well, close. Actually it's " + fullName($scope.current_student)
       } else {
@@ -64,6 +64,15 @@ flashcardControllers.controller('FlashcardCtrl', ['$scope', '$http',
       $scope.result_hidden = false
       $scope.next_button_focus = true
       $scope.textbox_focus = false
+    }
+
+    function goodGuess(guess, name) {
+      var first_letters = 0
+      for (var i = 0; i < guess.length; i++) {
+        if (guess[i] != name[i]) break
+        first_letters++
+      }
+      return edDist(guess, name) < 3 + first_letters * 1.5
     }
 
 
