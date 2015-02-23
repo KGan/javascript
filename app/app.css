@@ -1,9 +1,64 @@
 /* app css stylesheet */
+div.page.container-fluid {
+  height: 92vh
+}
+
+div.row-fluid.top-data {
+  margin-top:0.5em
+}
 
 body {
   background-color: #ddffff;
   height: 100%;
   bottom: 0
+}
+
+input.guess {
+  margin: 25px auto;
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center
+}
+
+div.responses {
+  width:30%;
+  margin-bottom: 1em
+}
+
+div.jumbotron.response {
+  margin: 1em 0em
+}
+
+button.btn.got-it {
+  margin: 20px, 20px;
+}
+
+button.btn.btn-primary.next {
+  width: 8em
+}
+
+button.btn.btn-primary {
+  background-color: #0c0
+}
+
+.animate-enter {
+	-webkit-transition: 1s linear all; /* Chrome */
+	transition: 1s linear all;
+	opacity: 0;
+}
+
+.animate-enter.animate-enter-active {
+	opacity: 1;
+}
+
+.animate-leave {
+	-webkit-transition: 1s linear all; /* Chrome */
+	transition: 1s linear all;
+	opacity: 1;
+}
+
+.animate-leave.animate-enter-active {
+	opacity: 0;
 }
 
 .flashcards {
@@ -14,7 +69,7 @@ body {
 .header {
   background-color: red;
   color: white;
-  height: 6em;
+  height: 8vh;
   border: 3px;
 }
 
@@ -22,15 +77,9 @@ body {
   border: 3px;
   border-color: black;
   border-style: solid;
-  width: 30%
+  width: 30%;
+  margin-top: 2em
 }
-
-.h1 {
-}
-
-.header-text {
-}
-
 
 .menu {
   list-style: none;

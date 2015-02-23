@@ -7,25 +7,36 @@
 
   <div class='container col-md-6 col-md-offset-3 flashcards' ng-init="init()" >
 
+    <div class="row-fluid top-data">
+      <div class="col-md-offset-1 col-md-3">
+        <label ng-model="students[current_student]" class="cohorts">
+          <div class="row h4" ng-repeat="(cohort_name, cohort_students) in cohorts">
+            <input type="checkbox" ng-model="cohort_students.selected" ng-change="updateStudents()"/> {{cohort_name}}
+          </div>
+        </label>
+      </div>
+      <div class="col-md-offset-4 col-md-4">
+        <label class="score"><h3> Your Score: {{score}} </h3> </label>
+      </div>
+    </div>
+
     <div class="row">
-      <label class="score col-md-offset-8"><h3> Your Score: {{score}} </h3> </label>
+      <div class="col-md-12">
+        <img ng-src="{{student_image_path}}" class="student col-md-offset-4"/>
+      </div>
     </div>
-
-
-    <img ng-src="{{student_image_path}}" class="student col-md-offset-4"/>
-    <input type="text" class="guess" ng-model="guess" ng-enter="submit()"
-      ng-focus="{{textbox_focus}}" />
-    <button class="btn btn-primary" ng-click="submit()" />GOT IT!</button>
-    <button class="btn btn-primary" ng-click="giveUp()" />uh...fuck</button>
-    <div ng-if="!result_hidden" class="jumbotron response" >
-      <label class="thin-label" >{{feedback_message}}</label>
-      <button class="btn btn-primary next" ng-click="next()"
-      ng-focus="{{next_button_focus}}">Next</button>
+    <div class="col-md-offset-4 responses">
+      <input type="text" class="guess" ng-model="guess" ng-enter="submit()"
+        ng-focus="{{textbox_focus}}" />
+      <div class="row">
+        <button class="btn btn-primary col-md-5 got-it" ng-click="submit()" /><h4>GOT IT!</h4></button>
+        <button class="btn btn-primary col-md-offset-2 col-md-5" ng-click="giveUp()" /><h4>uh...fuck</h4></button>
+      </div>
     </div>
-    <p ng-model="students[current_student]" class="cohorts">
-      <div class="row" ng-repeat="(cohort_name, cohort_students) in cohorts">
-        <input type="checkbox" ng-model="cohort_students.selected" ng-change="updateStudents()"/>{{cohort_name}}
-      </div><br>
-    </p>
+    <div ng-if="!result_hidden" ng-animate=" 'animate' " class="jumbotron response" >
+      <label class="thin-label col-md-offset-1" ><h3>{{feedback_message}}</h3></label>
+      <button class="btn btn-primary col-md-offset-1 next" ng-click="next()"
+      ng-focus="{{next_button_focus}}"><h4>Next</h4></button>
+    </div>
   </div>
 </div>
