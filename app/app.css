@@ -21,24 +21,34 @@ input.guess {
 }
 
 div.responses {
-  width:30%;
-  margin-bottom: 1em
+  width: 275px;
+  margin:auto
 }
 
 div.jumbotron.response {
-  margin: 1em 0em
+  margin: 1em 0em;
+  padding-top: 20px;
 }
 
 button.btn.got-it {
-  margin: 20px, 20px;
+  margin: 10px 20px;
+  float:left
 }
 
-button.btn.btn-primary.next {
-  width: 8em
+button.btn.give-up {
+  margin: 10px 20px;
+  float:right
 }
 
 button.btn.btn-primary {
-  background-color: #0c0
+  width: 8em;
+  height: 3em;
+  background-color: #0c0;
+}
+
+button.btn.btn-primary .button-text {
+  display:inline;
+  vertical-align: middle;
 }
 
 .animate-enter {
@@ -73,12 +83,14 @@ button.btn.btn-primary {
   border: 3px;
 }
 
-.student{
+
+img.student{
+  display:block;
   border: 3px;
   border-color: black;
   border-style: solid;
-  width: 30%;
-  margin-top: 2em
+  width: 275px;
+  margin: 2em auto 0 auto
 }
 
 .menu {
