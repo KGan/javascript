@@ -32,7 +32,6 @@ flashcardApp.directive('ngFocus', function() {
     attrs.$observe('ngFocus', function(value) {
       if (value === 'true') {
         element[0].focus()
-        element[0].select()
       }
     })
   }
