@@ -17,7 +17,7 @@
     "sizzle": "2.1.1-jquery.2.1.2",
     "requirejs": "2.1.10",
     "qunit": "1.14.0",
-    "sinon": "1.8.1",
+    "sinon": "1.8.1"
   },
   "keywords": [
     "jquery",
