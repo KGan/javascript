@@ -1,4 +1,12 @@
 {
+  "Feb 2015 TAs": {
+    "selected": true,
+    "students": [{"name":"Andrew Larsen"},
+      {"name":"CJ Avilla"},
+      {"name":"David Runger"},
+      {"name":"Jeff Fiddler"},
+      {"name":"Ryan Glassett"},
+      {"name":"Velina Veleva"}]},
   "Oct 2014": {
     "selected": false,
     "students": [{"name":"Aaron Cordovez"},
