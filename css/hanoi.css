@@ -1,0 +1,48 @@
+
+#hanoi-game {
+  padding: 10px;
+  transform: rotate(-90deg) translate(200%, 70%);
+  width: 300px;
+  display:block;
+}
+#hanoi-game:before {
+  content:"Press [NUM0] to Reset";
+  transform: rotate(90deg) translate(500px, -170px);
+  display:flex;
+  justify-content:center;
+  color:cornflowerblue;
+  font-size: 20px;
+}
+
+.hanoi-stack {
+  position:relative;
+  margin-left:10px;
+  display: flex;
+  align-items: center;
+  border-left: 3px solid #aaa;
+  padding: 10px;
+}
+
+.hanoi-stack:hover {
+  border-left: 3px solid blue;
+  background: #eee;
+  transition: border-left 1s, background .5s;
+}
+
+.hanoi-stack:nth-child(2) {
+  border-top: 2px solid #aaa;
+  border-bottom: 2px solid #aaa;
+}
+
+.hanoi-disk {
+  display:inline-block;
+  width: 20px;
+  background: slateblue;
+  margin-left: 5px;
+  border-radius: 8px;
+}
+
+.hanoi-stack.selected > .hanoi-disk:last-child {
+  background: plum;
+  transition: background .3s;
+}
