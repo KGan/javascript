@@ -45,7 +45,6 @@ $.extend($.Tabs.prototype, {
     //});
     this.$activeTab = $('.navigator li:first-child > a');
     this.$activeTab.addClass('active');
-    this.switchToPane(this.$activeTab.data('elm'));
     var $activeTabPane = $('.tab-pane' + this.$activeTab.attr('href'));
     $activeTabPane.addClass('active');
   },
@@ -71,25 +70,12 @@ $.extend($.Tabs.prototype, {
         $tabPane.addClass('active transitioning');
         setTimeout(function () {
           $tabPane.removeClass('transitioning');
-          this.switchToPane($clicked.data('elm'));
         }.bind(this), 0);
       }.bind(this));
     }
-  },
-
-  switchToPane: function(hrf) {
-    //switch(hrf) {
-    //  case '.carousel':
-    //    $('.carousel').carousel();
-    //        break;
-    //  case '.thumbnails':
-    //    $('.thumbnails').thumbnails();
-    //        break;
-    //  case '.zoomable':
-    //    $('div.zoomable').zoomable(50);
-    //        break;
-    //}
   }
+
+
 
 
 
