@@ -4,7 +4,8 @@ a.active {
   font-weight: bold;
 }
 
-a {
+a.tablink {
+  font-size: 30px;
   text-decoration: none;
 }
 
@@ -23,4 +24,11 @@ div.tab-pane.transitioning {
   display:block;
   opacity: 0;
   transition: opacity .5s;
+}
+
+a.slide-left {
+  float:right;
+}
+a.slide-right {
+  float:left;
 }

@@ -22,7 +22,7 @@ $.extend($.Carousel.prototype, {
     }.bind(this));
   },
   bindClick: function() {
-    this.$el.on('click.dir', 'a', this.click.bind(this));
+    this.$el.on('click.dir', 'a.slider', this.click.bind(this));
   },
   click: function(event) {
     var $dir = $(event.currentTarget);

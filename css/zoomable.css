@@ -1,15 +1,32 @@
 div.zoomable {
   width: 350px;
   position:relative;
+  margin:30px 50px;
 }
 
 div.zoomable img {
   display: block;
   position: relative;
   width:100%;
+  height: auto;
 }
 
 div.focus-box {
   border: 2px solid white;
   position: absolute;
+  z-index: 1;
+  box-sizing:border-box;
+}
+div.focus-box.disabled {
+  display: none;
+
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+div.zoomed-img {
+  position: absolute;
+  top: 0%;
+  left: 25%;
+  background-repeat: no-repeat;
 }

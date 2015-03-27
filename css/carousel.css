@@ -1,4 +1,6 @@
 div.carousel{
+  position:relative;
+  margin: auto;
   width:400px;
   height: 500px;
 }

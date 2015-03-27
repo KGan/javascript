@@ -31,26 +31,27 @@ $.Tabs.DEFAULT = [
 
 $.extend($.Tabs.prototype, {
   init: function(){
-    this.$el.append("<ul class='tabs'></ul>");
-    this.$el.find('ul').data('content-tabs', '#content-tabs');
-    this.$el.find('.tabs').append("<div id='content-tabs'></div>");
-    var tabPanes = "<div class='tab-pane'></div>";
-    this.$el.find('div#content-tabs').append(tabPanes + tabPanes + tabPanes);
-    this.$el.find('div.tab-pane').each(function (i) {
-      var tabPane = this;
-      var tag = $.Tabs.DEFAULT[i].tag;
-      $(tabPane).html("<p>" + $.Tabs.DEFAULT[i].desc + "</p>");
-      $(tabPane).attr('id', tag);
-      $(tabPane).parents('.tabs').prepend("<li><a href='#"+ tag + "'>" + $.Tabs.DEFAULT[i].breed + "</a></li>");
-    });
-    this.$activeTab = $('li:first-child a');
+    //this.$el.append("<ul class='tabs'></ul>");
+    //this.$el.find('ul').data('content-tabs', '#content-tabs');
+    //this.$el.find('.tabs').append("<div id='content-tabs'></div>");
+    //var tabPanes = "<div class='tab-pane'></div>";
+    //this.$el.find('div#content-tabs').append(tabPanes + tabPanes + tabPanes);
+    //this.$el.find('div.tab-pane').each(function (i) {
+    //  var tabPane = this;
+    //  var tag = $.Tabs.DEFAULT[i].tag;
+    //  $(tabPane).html("<p>" + $.Tabs.DEFAULT[i].desc + "</p>");
+    //  $(tabPane).attr('id', tag);
+    //  $(tabPane).parents('.tabs').prepend("<li><a href='#"+ tag + "'>" + $.Tabs.DEFAULT[i].breed + "</a></li>");
+    //});
+    this.$activeTab = $('.navigator li:first-child > a');
     this.$activeTab.addClass('active');
+    this.switchToPane(this.$activeTab.data('elm'));
     var $activeTabPane = $('.tab-pane' + this.$activeTab.attr('href'));
     $activeTabPane.addClass('active');
   },
 
   bindClick: function() {
-    this.$el.on('click.tabs', 'a', this.clickTab.bind(this));
+    this.$el.on('click.tabs', 'a.tablink', this.clickTab.bind(this));
   },
 
   clickTab: function(event) {
@@ -70,9 +71,24 @@ $.extend($.Tabs.prototype, {
         $tabPane.addClass('active transitioning');
         setTimeout(function () {
           $tabPane.removeClass('transitioning');
-        }, 0);
+          this.switchToPane($clicked.data('elm'));
+        }.bind(this), 0);
       }.bind(this));
     }
+  },
+
+  switchToPane: function(hrf) {
+    //switch(hrf) {
+    //  case '.carousel':
+    //    $('.carousel').carousel();
+    //        break;
+    //  case '.thumbnails':
+    //    $('.thumbnails').thumbnails();
+    //        break;
+    //  case '.zoomable':
+    //    $('div.zoomable').zoomable(50);
+    //        break;
+    //}
   }
 
 

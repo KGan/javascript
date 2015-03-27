@@ -17,7 +17,7 @@ $.Thumbnail = function(el) {
 $.extend($.Thumbnail.prototype, {
   activate: function($img) {
     var bigImg = $img.clone();
-    $('div.active').html(bigImg);
+    $('div.activeimg').html(bigImg);
   },
   bindEvents: function(){
     $('.gutter-images img').on('click.thumb', this.click.bind(this));
