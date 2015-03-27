@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My Cool Website</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="./js/thumbnails.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.2/build/cssreset/cssreset-min.css">
+    <link href="./css/thumbnails.css" rel="stylesheet" type="text/css">
+  </head>
+
+  <body>
+
+    <div class="thumbnails">
+      <div class="active"></div>
+      <div class='gutter clearfix'>
+        <a href='javascript:void(0)' class='nav'>&lt</a>
+        <div class="gutter-images">
+          <img src="http://i100.independent.co.uk/image/627-1ol6wuo.jpg">
+          <img src="http://rack.0.mshcdn.com/media/ZgkyMDEzLzA0LzExLzcyL3JoaW5vMi5kM2JiMC5qcGc/49582e09/056/rhino-2.jpg">
+          <img src="https://cdn1.lockerdome.com/uploads/db6ff7f0c29f3b6762fa00ee274535cd625dbfd73ca354a63f49252b9a1c04d9_large">
+          <img src="https://s-media-cache-ak0.pinimg.com/736x/a0/32/31/a03231a33f549692434227ae74da0647.jpg">
+          <img src="http://growld.com/wp-content/uploads/2014/03/hybrid-animals-14.jpg">
+          <img src="http://www.walltowatch.com/files/0/0/2/8/00280982-O.jpg">
+          <img src="http://i.telegraph.co.uk/multimedia/archive/03095/hybrid-animals-bir_3095352k.jpg">
+          <img src="http://www.lostateminor.com/wp-content/uploads/2013/05/Hybrid-animals-2.jpg">
+          <img src="http://clickypix.com/wp-content/uploads/2013/08/hybrid-shark-combo-creatures-17.jpg">
+          <img src="http://i100.independent.co.uk/image/627-1dyzlst.jpg">
+          <img src="http://i2.wp.com/paranoias.s3.amazonaws.com/wp-content/uploads/2014/10/1891284_10152520085557017_4393851492025920266_n.jpg">
+          <img src="http://www.larevistadeinternet.com/wp-content/uploads/2014/07/animales-hibridos2.jpg">
+          <img src="http://cdn.cavemancircus.com//wp-content/uploads/images/2013/april/hybrid_animals/hybrid_animals_19.jpg">
+          <img src="http://english.cri.cn/mmsource/images/2013/08/13/5c3f81cca4804619952cb4ed5f5fa2b7.jpg">
+        </div>
+        <a href='javascript:void(0)' class='nav'>&gt</a>
+      </div>
+    </div>
+
+  </body>
+
+  <script>
+    $(function(){
+      $('.thumbnails').thumbnails();
+    });
+  </script>
+</html>

@@ -1,0 +1,26 @@
+
+
+a.active {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+div.tab-pane {
+  display:none;
+  opacity:1;
+}
+
+div.tab-pane.active {
+  display:block;
+  opacity: 1;
+  transition: opacity .5s;
+}
+
+div.tab-pane.transitioning {
+  display:block;
+  opacity: 0;
+  transition: opacity .5s;
+}
