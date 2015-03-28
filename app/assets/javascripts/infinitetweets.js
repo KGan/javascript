@@ -20,6 +20,17 @@ $.extend($.InfiniteTweets.prototype, {
     this.$ul.on('insert-tweet', function(event, tweets) {
       this.insertTweets([tweets], true);
     }.bind(this));
+    var $win = $(window);
+    $win.scroll(function(){
+      if ($win.height() + $win.scrollTop() >= $(document).height()) {
+        this.stay = $win.scrollTop();
+        setTimeout(function(){
+          if (this.stay == $win.scrollTop()) {
+            this.fetchTweets();
+          }
+        }.bind(this), 500);
+      }
+    }.bind(this));
   },
 
   insertTweets: function(tweets, bottom){
