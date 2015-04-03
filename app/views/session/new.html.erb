@@ -1,0 +1,8 @@
+<span style="font-size: 144px"><strong>LOG IN</strong></span>
+
+
+<%= form_for :session, url: session_url, authenticity_token: form_authenticity_token do |f| %>
+  Username: <%= f.text_field :username %><br>
+  Password: <%= f.password_field :password %><br>
+  <%= f.submit %>
+<% end  %>

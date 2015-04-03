@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>News Reader</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+<%= flash[:errors] %>
+
+<%= link_to 'Index', root_url %>
+<% if logged_in? %>
+  HI <%= current_user.username %><br>
+  <%= link_to 'Sign Out', session_url, method: :delete %>
+<% else %>
+  <%= link_to 'Sign In', new_session_url %>
+  <%= link_to 'Sign Up', new_user_url %>
+<% end %>
+
+<%= yield %>
+
+</body>
+</html>
