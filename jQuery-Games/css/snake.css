@@ -1,0 +1,36 @@
+#snake-game {
+  display:block;
+  position:absolute;
+  width: 520px;
+  height: 520px;
+  top: 400px;
+}
+
+#snake-game:before {
+  content:"Press [SPACE] to Start. [NUM9] to Reset";
+  display:flex;
+  justify-content:center;
+  color: cornflowerblue;
+  font-size: 18px;
+}
+.snake-cell {
+  background:#eee;
+  float:left;
+  position: relative;
+  width:24px;
+  height: 24px;
+  border: 1px solid #aaa;
+}
+
+.snake {
+  background: lightsteelblue;
+  transition: background 1s;
+}
+
+.apple {
+  background: crimson;
+}
+
+.snake-head {
+  background: mediumturquoise;
+}

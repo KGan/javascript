@@ -1,0 +1,39 @@
+.ttt-cell {
+  background: #eee;
+  width: 100px;
+  height: 100px;
+  float: left;
+  display: block;
+  border: 1px solid #aaa;
+}
+
+/*.ttt-cell:nth-child(3n) {
+
+}*/
+
+.ttt-cell:not(.selected):hover {
+  background: yellow;
+}
+
+#ttt-board {
+  padding: 10px;
+  max-width: 370px;
+}
+
+.group:after {
+  content:"";
+  clear: both;
+  display: block;
+}
+
+.ttt-cell > .ttt-symbol {
+  display: block;
+  font-size: 120px;
+  margin-left: 25px;
+  margin-bottom: 10px;
+}
+
+
+#ttt-board.completed .ttt-cell:hover {
+  background: #eee;
+}

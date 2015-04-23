@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tic Tac Toe</title>
+    <link rel="stylesheet" type="text/css" href="../css/ttt.css">
+    <link rel="stylesheet" type="text/css" href="../css/hanoi.css">
+    <link rel="stylesheet" type="text/css" href="../css/snake.css">
+  </head>
+  <body>
+    <script src="../js/jquery-2.1.1.js"></script>
+    <!-- Whackjobs at GithubPages don't understand symlinks... -->
+    <script src="../../ttt-core-solution/ttt-core.js"></script>
+    <script src="../../ttt-core-solution/hanoi-core.js"></script>
+    <script src="../js/ttt-view.js"></script>
+    <script src="../js/hanoi-view.js"></script>
+    <script src="../js/snake.js"></script>
+    <div id='ttt-board' class='group'></div>
+    <div id='hanoi-game' class='group'></div>
+    <div id='snake-game' class='group'></div>
+    <script>
+      var tttboard = $('#ttt-board');
+      var tttgame = new TTT.Game();
+      var tttGV = new TTT.View(tttgame, tttboard);
+
+      var hanoiEl = $('#hanoi-game');
+      var hanoiGame = new Hanoi.Game();
+      var hanoiView = new Hanoi.View(hanoiGame, hanoiEl);
+
+      var sng = $('#snake-game');
+      var snb = new SN.Board(20);
+      var snv = new SN.View(snb, sng);
+      $(document).keydown(function(e) {
+        if(e.keyCode === 32) {
+          e.preventDefault();
+          snv.start();
+        }
+        if (e.keyCode === 105) {
+          e.preventDefault();
+          snv.reset();
+        }
+        if (e.keyCode === 96) {
+          e.preventDefault();
+          hanoiView.reset();
+        }
+        if (e.keyCode === 103) {
+          e.preventDefault();
+          tttGV.reset();
+        }
+      })
+    </script>
+  </body>
+</html>
