@@ -1,0 +1,9 @@
+<span style="font-size: 144px"><strong>LOG IN</strong></span>
+
+
+<form action="<%= session_url %>" method="post">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <label>Username: <input type="TEXT" name="user[username]"></label>
+  <label>Password: <input type="Password" name="user[password]"></label>
+  <input type="submit" value="Log In">
+</form>
