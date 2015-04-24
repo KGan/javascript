@@ -1,0 +1,123 @@
+/* app css stylesheet */
+div.page.container-fluid {
+  height: 92vh
+}
+
+div.row-fluid.top-data {
+  margin-top:0.5em
+}
+
+body {
+  background-color: #ddffff;
+  height: 100%;
+  bottom: 0
+}
+
+input.guess {
+  margin: 25px auto;
+  font-size: 1.5em;
+  width: 100%;
+  text-align: center
+}
+
+div.responses {
+  width: 275px;
+  margin:auto
+}
+
+div.jumbotron.response {
+  margin: 1em 0em;
+  padding-top: 20px;
+}
+
+button.btn.got-it {
+  margin: 10px 20px;
+  float:left
+}
+
+button.btn.give-up {
+  margin: 10px 20px;
+  float:right
+}
+
+button.btn.btn-primary {
+  width: 8em;
+  height: 3em;
+  background-color: #0c0;
+}
+
+button.btn.btn-primary .button-text {
+  display:inline;
+  vertical-align: middle;
+}
+
+.animate-enter {
+	-webkit-transition: 1s linear all; /* Chrome */
+	transition: 1s linear all;
+	opacity: 0;
+}
+
+.animate-enter.animate-enter-active {
+	opacity: 1;
+}
+
+.animate-leave {
+	-webkit-transition: 1s linear all; /* Chrome */
+	transition: 1s linear all;
+	opacity: 1;
+}
+
+.animate-leave.animate-enter-active {
+	opacity: 0;
+}
+
+.flashcards {
+  background-color: #fff;
+  height: 100%
+}
+
+.header {
+  background-color: red;
+  color: white;
+  height: 8vh;
+  border: 3px;
+}
+
+
+img.student{
+  display:block;
+  border: 3px;
+  border-color: black;
+  border-style: solid;
+  width: 275px;
+  margin: 2em auto 0 auto
+}
+
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+
+.menu:before {
+  content: "[";
+}
+
+.menu:after {
+  content: "]";
+}
+
+.menu > li {
+  display: inline;
+}
+
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}

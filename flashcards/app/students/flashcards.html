@@ -1,0 +1,42 @@
+<div class='page container-fluid'>
+  <div class='header'>
+    <div class='header_text row'>
+      <h1 class='text-center'> App Academy Cohort Flashcards </h1>
+    </div>
+  </div>
+
+  <div class='container col-md-6 col-md-offset-3 flashcards' ng-init="init()" >
+
+    <div class="row-fluid top-data">
+      <div class="col-md-offset-1 col-md-3">
+        <label ng-model="students[current_student]" class="cohorts">
+          <div class="row h4" ng-repeat="(cohort_name, cohort_students) in cohorts">
+            <input type="checkbox" ng-model="cohort_students.selected" ng-change="updateStudents()"/> {{cohort_name}}
+          </div>
+        </label>
+      </div>
+      <div class="col-md-offset-4 col-md-4">
+        <label class="score"><h3> Your Score: {{score}} </h3> </label>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-12">
+        <img ng-src="{{student_image_path}}" class="student"/>
+      </div>
+    </div>
+    <div class="col-md-offset-4 responses">
+      <input type="text" class="guess" ng-model="guess" ng-enter="submit()"
+        ng-focus="{{textbox_focus}}" />
+      <div class="row">
+        <button class="btn btn-primary got-it" ng-click="submit()" /><h4 class='button-text'>GOT IT!</h4></button>
+        <button class="btn btn-primary give-up" ng-click="giveUp()" /><h4 class='button-text'>uh...fuck</h4></button>
+      </div>
+    </div>
+    <div ng-if="!result_hidden" ng-animate=" 'animate' " class="jumbotron response" >
+      <label class="thin-label col-md-offset-1" ><h3>{{feedback_message}}</h3></label>
+      <button class="btn btn-primary col-md-offset-1 next" ng-click="next()"
+      ng-focus="{{next_button_focus}}"><h4 class='button-text'>Next</h4></button>
+    </div>
+  </div>
+</div>
